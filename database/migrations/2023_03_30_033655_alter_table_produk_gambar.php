@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('produk', function ($table) {
-            $table->unsignedBigInteger('kategori_id')->after('id')->nullable();
+            $table->string('gambar')->after('deskripsi')->nullable();
         });
     }
 
@@ -22,7 +22,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('produk', function ($table) {
-            $table->dropColumn(['kategori_id']);
+            $table->dropColumn(['gambar']);
         });
     }
 };

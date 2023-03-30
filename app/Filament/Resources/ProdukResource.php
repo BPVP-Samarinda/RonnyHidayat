@@ -34,6 +34,8 @@ class ProdukResource extends Resource
                     ->columnSpan('full'),
                 Forms\Components\Textarea::make('deskripsi')
                     ->columnSpan('full'),
+                Forms\Components\FileUpload::make('gambar')
+                    ->columnSpan('full'),
             ]);
     }
 
@@ -44,6 +46,9 @@ class ProdukResource extends Resource
                 Tables\Columns\TextColumn::make('nama'),
                 Tables\Columns\TextColumn::make('deskripsi')
                     ->wrap(),
+                Tables\Columns\ImageColumn::make('gambar')
+                    ->size(150)
+                    ->square(),
                 Tables\Columns\TextColumn::make('kategori.nama'),
                 Tables\Columns\TextColumn::make('harga')
                     ->money('IDR', true),
